@@ -1,0 +1,68 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary: black;
+    --secondary: rgb(255, 255, 255);
+    --awesome: hsla(308, 66%, 28%, 0.7);
+}
+.container {
+   
+    margin-block: 20px;
+    --numbOfRed: 123;
+    --numbOfOrange: 100;
+    --numbOfYellow: 18;
+    border-width: 5px 8px;
+    border-image: radial-gradient(120deg, var(--numbOfpurple), var(--numbOfplum), var(--numbOfpink));
+}
+
+.container :is(#example1, #example2), 
+.button-wrapper {
+    display: flex;
+    gap: .6rem;
+}
+
+.container :is(#example2) {
+    flex-flow: row wrap;
+}
+.item {
+    display: grid;
+    grid-template-rows: 20rem 1fr auto;
+}
+.item>img{
+    width: 20rem;
+    aspect-ratio: 1/1;
+}
+.button-wrapper {
+    justify-content: space-between;
+}
+.button-wrapper button {
+    border: 3px solid;
+    border-image: linear-gradient( purple, var(--awesome)) 11 fill;
+}
+.image-animation {
+    background: linear-gradient(to right, plum, purple);
+    height: 300px;
+}
+img[alt="Image"]{
+    width: 5rem;
+    aspect-ratio: 1/1;
+    animation: animateLaptop 5s infinite;
+    transition: all .5s;
+}
+
+
+@keyframes animateLaptop {
+   
+    from {
+       transform: translateX(50px);
+    }
+    to{
+       transform: translateX(calc(100vw - 100px)) scale(1, 1) rotateX(360deg);
+    }
+}
+
